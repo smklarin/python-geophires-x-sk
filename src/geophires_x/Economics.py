@@ -1893,7 +1893,7 @@ class Economics:
                     model.surfaceplant.HeatExtracted.value) * 1000.  # 1.15 for 15% contingency and 1.12 for 12% indirect costs, changed to 5% contingency and 0% indirect (SK)
                 if self.chillercapex.value == -1:  # no value provided by user, use built-in correlation ($2500/ton)
                     self.chillercapex.value = 1.0 * 1.05 * np.max(
-                        model.surfaceplant.CoolingProduced.value) * 1000 / 3.517 * 1500 / 1e6  # $1,500/ton of cooling(SK). 1.15 for 15% contingency and 1.12 for 12% indirect costs, changed to 5% contingency and 0% indirect (SK)
+                        model.surfaceplant.CoolingProduced.value) * 1000 / 3.517 * 2000 / 1e6  # $1,500/ton of cooling(SK). 1.15 for 15% contingency and 1.12 for 12% indirect costs, changed to 5% contingency and 0% indirect (SK)
 
                 # now add chiller cost to surface plant cost
                 self.Cplant.value += self.chillercapex.value
